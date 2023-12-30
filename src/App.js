@@ -36,12 +36,12 @@ function App() {
       setLang("en");
       i18n.changeLanguage("en");
       moment.locale("en");
-      setDateAndTime(moment().format("MMMM Do YYYY, h:mm:ss a"));
+      setDateAndTime(moment().format("dddd | Do MMMM YYYY"));
     } else {
       setLang("ar");
       i18n.changeLanguage("ar");
       moment.locale("ar");
-      setDateAndTime(moment().format("MMMM Do YYYY, h:mm:ss a"));
+      setDateAndTime(moment().format("dddd | Do MMMM YYYY"));
     }
 
   }
@@ -122,12 +122,14 @@ function App() {
               <div
                 style={{
                   display: "flex",
-                  alignItems: "end",
+                  flexDirection:"column",
+                  alignItems: "start",
                   justifyContent: "satrt",
                 }}
                 dir={direction}
               >
                 <Typography
+                dir={direction}
                   variant="h1"
                   style={{ marginRight: "20px", fontWeight: "600" }}
                 >
@@ -140,6 +142,7 @@ function App() {
               </div>
 
               {/* Container of dgree and + cloude icon  */}
+              <hr style={{width:"100%"}}/>
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 {/* DEGREE AND DESCRIPTION */}
                 <div>
@@ -156,7 +159,7 @@ function App() {
                     </Typography>
                     <img src="https://openweathermap.org/img/wn/10d@2x.png" />
                   </div>
-                  {/* == TEMP */}
+                  {/* == TEMP */} 
                   <Typography variant="h6">{t(temp.description)}</Typography>
                   {/* MIN AND MAX */}
 

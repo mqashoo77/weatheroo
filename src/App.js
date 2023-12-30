@@ -50,7 +50,7 @@ function App() {
     i18n.changeLanguage(lang);
   }, []);
   useEffect(() => {
-    setDateAndTime(moment().format("MMMM Do YYYY, h:mm:ss a"));
+    setDateAndTime(moment().format("dddd | Do MMMM YYYY"));
     axios
       .get(
         "https://api.openweathermap.org/data/2.5/weather?lat=31.76&lon=35.21&appid=2b8e0bc57fe3a697807123344e5c2f5b",
